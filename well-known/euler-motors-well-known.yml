@@ -1,0 +1,79 @@
+generated: '2026-08-12'
+method: probed
+source: https://www.eulermotors.com/.well-known/
+name: Euler Motors well-known probe
+note: >-
+  Every /.well-known/ path probed on both eulermotors.com hosts returned 403 AccessDenied
+  from the S3/CloudFront origin that fronts the marketing site — the bucket has no objects
+  under that prefix and denies listing, so the 403 is an absence, not a wall we were stopped
+  by. The shepherd.eulermotors.com console (a single-page app) answers 404 with its SPA shell
+  on every /.well-known/ path. No security.txt, no OpenID/OAuth metadata, no api-catalog, no
+  ai-plugin.json and no agent card is served by this company. No WellKnown or SecurityTxt
+  pointer is emitted, because nothing was found — this file records the absence.
+hosts:
+- host: www.eulermotors.com
+  paths:
+  - path: /.well-known/security.txt
+    status: 403
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 403
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+    file: null
+  - path: /.well-known/api-catalog
+    status: 403
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 403
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 403
+    file: null
+  - path: /.well-known/agent.json
+    status: 403
+    file: null
+- host: shepherd.eulermotors.com
+  paths:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+other_root_documents:
+- path: /llms.txt
+  host: www.eulermotors.com
+  status: 200
+  file: ../llms/euler-motors-llms.txt
+  note: Published, but written in a bespoke PRIORITY/INCLUDE/EXCLUDE syntax, not the llms.txt spec format.
+- path: /robots.txt
+  host: www.eulermotors.com
+  status: 200
+  file: null
+  note: >-
+    Explicitly allows GPTBot, OAI-SearchBot, ChatGPT-User, Google-Extended, PerplexityBot,
+    Perplexity-User, ClaudeBot and Claude-User; blocks CCBot, Bytespider, Diffbot and other
+    scrapers. Disallows all *.php paths from the retired legacy site.
+- path: /sitemap.xml
+  host: www.eulermotors.com
+  status: 200
+  file: null
+  note: Sitemap index -> primary-sitemap.xml (17 marketing URLs) + blogs-sitemap.xml. No developer or API pages.
+hits: 0

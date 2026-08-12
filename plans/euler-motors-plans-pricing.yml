@@ -1,0 +1,26 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.eulermotors.com/en/vehicle-intelligence/
+name: Euler Motors API plans and pricing
+plan_count: 0
+plans: []
+note: >-
+  Euler Motors publishes no API plans, tiers, quotas or developer pricing of any kind, because
+  it publishes no public API. The only pricing the company publishes is vehicle pricing —
+  on-road price and finance/EMI enquiry forms for the HiLoad, Turbo and Storm EV models — which
+  is product pricing for physical goods, not API access. The Euler Shepherd telematics platform
+  (Shepherd Lite mobile app + Shepherd Enterprise web console) is bundled with vehicle ownership
+  and has no separately published plan, seat price or metered tier. No "request API access",
+  partner tier or usage-based catalog page exists on any host the company controls.
+searched:
+- url: https://www.eulermotors.com/en/vehicle-intelligence/
+  status: 200
+  finding: Shepherd product page — features only, no plans, no pricing, no developer links.
+- url: https://www.eulermotors.com/en/
+  status: 200
+  finding: Vehicle marketing site; pricing surfaces are per-model enquiry forms.
+- url: https://www.eulermotors.com/sitemap.xml
+  status: 200
+  finding: 17 URLs across the whole site; none is a pricing, plans or developer page.
+x-pointer-withheld: >-
+  plan_count is 0 — no apis.yml `Plans` pointer is emitted, because a pointer asserts the provider publishes plans and this file records that it does not.

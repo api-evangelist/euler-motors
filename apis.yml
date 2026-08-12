@@ -1,17 +1,39 @@
 aid: euler-motors
 name: Euler Motors
-description: 'Euler Motors is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Euler Motors is an Indian electric commercial vehicle manufacturer headquartered
+  in New Delhi, building battery-electric cargo and light commercial vehicles for last-mile
+  logistics — the HiLoad and Turbo electric three-wheelers and the Storm EV four-wheeler
+  light commercial vehicle range. Alongside the vehicles the company operates Euler Shepherd,
+  a connected-vehicle telematics platform delivered as two end-user products: Shepherd Lite
+  (a mobile app for real-time vehicle location, battery state of charge, range, charging
+  status and alerts) and Shepherd Enterprise (a browser-based fleet console with trip,
+  utilization and operations reporting). Euler Motors publishes no public developer program:
+  there is no developer portal, API reference, OpenAPI/AsyncAPI specification, SDK, webhook
+  catalog or partner integration documentation on any host it controls. The Shepherd web
+  console is a single-page application whose backend answers anonymous requests with 403,
+  so the telematics data surface is reachable only to vehicle owners inside the product.
+  The company does publish an llms.txt at its web root, directing AI crawlers to its
+  product, service-network and blog pages.'
 url: https://raw.githubusercontent.com/api-evangelist/euler-motors/refs/heads/main/apis.yml
+image: https://www.eulermotors.com/euler_white_logo.png
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment-pass
 specificationVersion: '0.20'
 created: '2026-08-12'
 modified: '2026-08-12'
 tags:
 - Company
+- Automotive
+- Electric Vehicles
+- Commercial Vehicles
+- Logistics
+- Telematics
+- Fleet Management
+- Transportation
+- Manufacturing
+- India
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +41,51 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/euler-motors-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.eulermotors.com/en/
+- type: Blog
+  url: https://www.eulermotors.com/en/blogs/
+- type: News
+  url: https://www.eulermotors.com/en/news/
+- type: Support
+  url: https://www.eulermotors.com/en/contact-us/
+- type: TermsOfService
+  url: https://www.eulermotors.com/en/terms/
+- type: PrivacyPolicy
+  url: https://www.eulermotors.com/en/policy/
+- type: RefundPolicy
+  url: https://www.eulermotors.com/en/refund/
+- type: About
+  url: https://www.eulermotors.com/en/about-us/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/eulermotors/
+- type: YouTube
+  url: https://www.youtube.com/c/EulerMotors
+- type: LLMsTxt
+  url: llms/euler-motors-llms.txt
+x-enrichment:
+  date: '2026-08-12'
+  status: minimal
+  artifacts_added: 5
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Euler Motors ships connected-vehicle software only as end-user products — the Shepherd Lite
+    mobile app and the login-gated Shepherd Enterprise fleet console — and publishes no developer
+    portal, API reference, OpenAPI/GraphQL/AsyncAPI specification, SDK or webhook catalog on any
+    of its hosts; the Shepherd console's own backend is a private AWS API Gateway deployment that
+    answers anonymous requests with 403 Forbidden.
+  evidence:
+  - url: https://www.eulermotors.com/en/vehicle-intelligence/
+    status: 200
+  - url: https://shepherd.eulermotors.com/openapi.json
+    status: 404
+  - url: https://www.eulermotors.com/.well-known/security.txt
+    status: 403
+  - url: https://www.eulermotors.com/sitemap.xml
+    status: 200
+  checked: '2026-08-12'

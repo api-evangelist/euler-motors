@@ -1,0 +1,23 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.eulermotors.com/en/vehicle-intelligence/
+name: Euler Motors API rate limits
+limit_count: 0
+limits: []
+headers: []
+note: >-
+  No rate limits are published, because no public API is published. Euler Motors operates no
+  developer portal, API reference or specification, so there is no documented quota, window,
+  burst allowance or 429 behavior to record. The Shepherd Enterprise console's backend
+  (a private AWS API Gateway deployment referenced from the app's own remote-config document)
+  returns 403 Forbidden to anonymous requests and emits no RateLimit-* or X-RateLimit-* headers
+  on that response, so nothing could be observed by probe either.
+searched:
+- url: https://www.eulermotors.com/en/vehicle-intelligence/
+  status: 200
+  finding: Shepherd product page; no technical or integration documentation.
+- url: https://shepherd.eulermotors.com/
+  status: 200
+  finding: Login-gated single-page app; no public docs route.
+x-pointer-withheld: >-
+  limit_count is 0 — no apis.yml `RateLimits` pointer is emitted, because a pointer asserts the provider publishes limits and this file records that it does not.

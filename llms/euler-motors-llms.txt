@@ -1,0 +1,30 @@
+# -----------------------------
+# llm.txt for Euler Motors
+# Purpose: Priority signals for LLM/AI indexing
+# -----------------------------
+
+# High-Priority AI/LLM Pages
+PRIORITY: https://www.eulermotors.com/en/turbo/
+PRIORITY: https://www.eulermotors.com/en/hiload/
+PRIORITY: https://www.eulermotors.com/en/storm-ev-lr200/
+PRIORITY: https://www.eulermotors.com/en/storm-ev-t1500/
+
+# Brand & Core Pages
+PRIORITY: https://www.eulermotors.com/en/
+PRIORITY: https://www.eulermotors.com/en/about-us/
+PRIORITY: https://www.eulermotors.com/en/contact-us/
+PRIORITY: https://www.eulermotors.com/en/service-network/
+PRIORITY: https://www.eulermotors.com/en/product-reviews/
+PRIORITY: https://www.eulermotors.com/en/showroom-locator/
+PRIORITY: https://www.eulermotors.com/en/charging-network/
+
+
+# Blog & Knowledge Content
+INCLUDE: https://www.eulermotors.com/en/blog/
+INCLUDE: https://www.eulermotors.com/en/blog/*
+
+# Exclude Admin/Private/Useless Sections
+EXCLUDE: https://www.eulermotors.com/en/admin/
+
+
+# End of llm.txt
